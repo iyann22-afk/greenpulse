@@ -5,6 +5,8 @@ analyzer:
     - build/**
     - android/**
     - ios/**
+    - web/**
+    - windows/**
   errors:
     deprecated_member_use: ignore
     prefer_const_constructors: ignore
