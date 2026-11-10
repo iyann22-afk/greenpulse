@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'app_theme.dart';
 import 'app_state.dart';
 import '../navigation/main_navigation.dart';
+import '../core/widgets/phone_frame_wrapper.dart';
 
 class GreenPulseApp extends StatelessWidget {
   const GreenPulseApp({super.key});
@@ -15,7 +16,9 @@ class GreenPulseApp extends StatelessWidget {
         title: 'GREENPULSE',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
-        home: const MainNavigation(),
+        home: const PhoneFrameWrapper(
+          child: MainNavigation(),
+        ),
       ),
     );
   }

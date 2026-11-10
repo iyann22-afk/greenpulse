@@ -508,16 +508,18 @@ class _ThresholdRow extends StatelessWidget {
           children: [
             Icon(icon, color: color, size: 18),
             const SizedBox(width: 8),
-            Text(
-              label,
-              style: const TextStyle(
-                fontFamily: 'Manrope',
-                fontWeight: FontWeight.w600,
-                fontSize: 14,
-                color: AppColors.darkText,
+            Expanded(
+              child: Text(
+                label,
+                style: const TextStyle(
+                  fontFamily: 'Manrope',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 14,
+                  color: AppColors.darkText,
+                ),
               ),
             ),
-            const Spacer(),
+            const SizedBox(width: 8),
             Text(
               '${minVal.toStringAsFixed(1)}$unit – ${maxVal.toStringAsFixed(1)}$unit',
               style: TextStyle(

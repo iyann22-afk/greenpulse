@@ -73,30 +73,33 @@ class _DashboardPageState extends State<DashboardPage>
                         children: [
                           const GreenPulseLogo(size: 38, animate: true),
                           const SizedBox(width: 10),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                'GREENPULSE',
-                                style: TextStyle(
-                                  fontFamily: 'Manrope',
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 18,
-                                  color: AppColors.forestGreen,
-                                  letterSpacing: 0.5,
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'GREENPULSE',
+                                  style: TextStyle(
+                                    fontFamily: 'Manrope',
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 18,
+                                    color: AppColors.forestGreen,
+                                    letterSpacing: 0.5,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                AppConstants.appTagline,
-                                style: const TextStyle(
-                                  fontFamily: 'Inter',
-                                  fontSize: 10,
-                                  color: AppColors.mutedText,
+                                Text(
+                                  AppConstants.appTagline,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                    fontFamily: 'Inter',
+                                    fontSize: 10,
+                                    color: AppColors.mutedText,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                          const Spacer(),
                           Stack(
                             children: [
                               IconButton(
@@ -231,13 +234,17 @@ class _DashboardPageState extends State<DashboardPage>
                                                 color: AppColors.freshLime,
                                               ),
                                               const SizedBox(width: 4),
-                                              Text(
-                                                AppConstants.defaultLocation,
-                                                style: const TextStyle(
-                                                  fontFamily: 'Inter',
-                                                  color: AppColors.freshLime,
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.w500,
+                                              Expanded(
+                                                child: Text(
+                                                  AppConstants.defaultLocation,
+                                                  maxLines: 1,
+                                                  overflow: TextOverflow.ellipsis,
+                                                  style: const TextStyle(
+                                                    fontFamily: 'Inter',
+                                                    color: AppColors.freshLime,
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
                                                 ),
                                               ),
                                             ],
@@ -251,13 +258,17 @@ class _DashboardPageState extends State<DashboardPage>
                                                 color: Colors.white70,
                                               ),
                                               const SizedBox(width: 4),
-                                              Text(
-                                                state.plantType,
-                                                style: const TextStyle(
-                                                  fontFamily: 'Manrope',
-                                                  color: Colors.white,
-                                                  fontSize: 13,
-                                                  fontWeight: FontWeight.w600,
+                                              Expanded(
+                                                child: Text(
+                                                  state.plantType,
+                                                  maxLines: 1,
+                                                  overflow: TextOverflow.ellipsis,
+                                                  style: const TextStyle(
+                                                    fontFamily: 'Manrope',
+                                                    color: Colors.white,
+                                                    fontSize: 13,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
                                                 ),
                                               ),
                                             ],

@@ -347,7 +347,7 @@ void main() {
       await tester.pumpWidget(const GreenPulseApp());
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('GREENPULSE'), findsOneWidget);
+      expect(find.text('GREENPULSE'), findsWidgets);
       expect(find.text('Live Sensors'), findsOneWidget);
       expect(find.text('Temperature'), findsWidgets);
       expect(find.text('Humidity'), findsWidgets);

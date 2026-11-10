@@ -69,35 +69,39 @@ class _AnimatedSensorValueState extends State<AnimatedSensorValue>
 
     return FadeTransition(
       opacity: _fadeAnim,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Text(
-            _displayedValue!.toStringAsFixed(1),
-            style: TextStyle(
-              fontFamily: 'Manrope',
-              fontWeight: FontWeight.w800,
-              fontSize: 32,
-              color: widget.isStale
-                  ? widget.color.withOpacity(0.4)
-                  : widget.color,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 5),
-            child: Text(
-              widget.unit,
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        alignment: Alignment.centerLeft,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Text(
+              _displayedValue!.toStringAsFixed(1),
               style: TextStyle(
                 fontFamily: 'Manrope',
-                fontWeight: FontWeight.w600,
-                fontSize: 14,
+                fontWeight: FontWeight.w800,
+                fontSize: 32,
                 color: widget.isStale
                     ? widget.color.withOpacity(0.4)
-                    : widget.color.withOpacity(0.7),
+                    : widget.color,
               ),
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.only(bottom: 5),
+              child: Text(
+                widget.unit,
+                style: TextStyle(
+                  fontFamily: 'Manrope',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 14,
+                  color: widget.isStale
+                      ? widget.color.withOpacity(0.4)
+                      : widget.color.withOpacity(0.7),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
